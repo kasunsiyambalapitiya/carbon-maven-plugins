@@ -137,6 +137,7 @@ public class P2ApplicationLaunchManager {
                 "-publishArtifactRepository",
                 "-compress",
                 "-append");
+        //sourceDir points to the location where both the extracted features and bundles are present
     }
 
     /**

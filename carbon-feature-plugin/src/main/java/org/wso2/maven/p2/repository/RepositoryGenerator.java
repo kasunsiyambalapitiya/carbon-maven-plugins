@@ -104,7 +104,7 @@ public class RepositoryGenerator {
         List<HashMap<String, CarbonArtifact>> artifacts = DependencyResolver.getDependenciesForProject(project,
                 resourceBundle.getRepositorySystem(), resourceBundle.getRemoteRepositories(),
                 resourceBundle.getLocalRepository());
-        dependentBundles = artifacts.get(0);
+        dependentBundles = artifacts.get(0);    // the same map location is referenced from these map references, same memory location
         dependentFeatures = artifacts.get(1);
     }
 
@@ -245,7 +245,7 @@ public class RepositoryGenerator {
                 throw new IOException("Error occurred while creating output folder structure");
             }
 
-            if (resourceBundle.getRepository() == null) {
+            if (resourceBundle.getRepository() == null) { // if the target repository is not defined in the generate-p2 goal config
                 File repo = new File(targetDir, project.getArtifactId() + "_" + project.getVersion());
                 resourceBundle.setRepository(repo.toURI().toURL());
             }
