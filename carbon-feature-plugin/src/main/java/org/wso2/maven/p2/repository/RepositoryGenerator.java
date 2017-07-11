@@ -251,7 +251,7 @@ public class RepositoryGenerator {
             }
 
             repoGenerationLocation = new File(resourceBundle.getRepository().getFile().replace("/",
-                    File.separator));
+                    File.separator)); // replace "/" in the URL given in the POM's plugin targetRepo with system dependant File.seperator
             archiveFile = new File(targetDir, project.getArtifactId() + "_" + project.getVersion() + ".zip");
             categoryDefinitionFile = File.createTempFile("equinox-p2", "category");
         } catch (IOException e) {
