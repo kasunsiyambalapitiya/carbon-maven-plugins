@@ -104,7 +104,8 @@ public class RepositoryGenerator {
         List<HashMap<String, CarbonArtifact>> artifacts = DependencyResolver.getDependenciesForProject(project,
                 resourceBundle.getRepositorySystem(), resourceBundle.getRemoteRepositories(),
                 resourceBundle.getLocalRepository());
-        dependentBundles = artifacts.get(0);    // the same map location is referenced from these map references, same memory location
+        dependentBundles = artifacts.get(0);    // the same map location is referenced from these map
+        // references, same memory location
         dependentFeatures = artifacts.get(1);
     }
 
@@ -245,13 +246,15 @@ public class RepositoryGenerator {
                 throw new IOException("Error occurred while creating output folder structure");
             }
 
-            if (resourceBundle.getRepository() == null) { // if the target repository is not defined in the generate-p2 goal config
+            if (resourceBundle.getRepository() == null) { // if the target repository is not defined in
+                // the generate-p2 goal config
                 File repo = new File(targetDir, project.getArtifactId() + "_" + project.getVersion());
                 resourceBundle.setRepository(repo.toURI().toURL());
             }
 
             repoGenerationLocation = new File(resourceBundle.getRepository().getFile().replace("/",
-                    File.separator)); // replace "/" in the URL given in the POM's plugin targetRepo with system dependant File.seperator
+                    File.separator)); // replace "/" in the URL given in the POM's plugin targetRepo with
+            // system dependant File.seperator
             archiveFile = new File(targetDir, project.getArtifactId() + "_" + project.getVersion() + ".zip");
             categoryDefinitionFile = File.createTempFile("equinox-p2", "category");
         } catch (IOException e) {

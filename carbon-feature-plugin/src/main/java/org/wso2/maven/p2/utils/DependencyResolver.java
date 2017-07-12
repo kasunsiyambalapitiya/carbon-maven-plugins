@@ -59,7 +59,8 @@ public class DependencyResolver {
         List<HashMap<String, CarbonArtifact>> results = new ArrayList<>();
         HashMap<String, CarbonArtifact> bundles = new HashMap<>();
         HashMap<String, CarbonArtifact> features = new HashMap<>();
-        results.add(bundles);   //references of bundle and features ( refering to maps ) are added to the ArrayList refereced by results
+        results.add(bundles);   //references of bundle and features ( refering to maps ) are added to the
+        // ArrayList refereced by results
         results.add(features);
         List<Dependency> dependencies = project.getDependencies();
 
@@ -87,7 +88,8 @@ public class DependencyResolver {
                 features.put(key, carbonArtifact);
             }
         }
-        return results; // return the reference to the list having references to the both the maps having features and bundles
+        return results; // return the reference to the list having references to the both the map
+        // s having features and bundles
     }
 
     /**

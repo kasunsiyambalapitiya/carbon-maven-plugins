@@ -96,7 +96,8 @@ public class FeatureInstaller {
     }
 
     /**
-     * Generate the formatted string representation of features from the features passed in through the pom.xml. This
+     * Generate the formatted string representation of features from the features passed in through the pom.xml,
+     * where feature installation details are present. This
      * formatted string is passed into P2ApplicationLauncher to generate the profile.
      *
      * @return formatted string to pass into P2ApplicationLauncher
